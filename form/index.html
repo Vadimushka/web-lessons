@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<title>Form</title>
+<link rel="StyleSheet" href="css/assets.css">
+<script type="text/javascript" src="js/assets.js"></script>
+</head>
+
+<body>
+<div class="form">
+    <form name="form_search" action="javascript:" method="post" onsubmit="return form_view();">
+        <fieldset class="work">
+            <label>Введите название вакансии:
+                <input type="text" name="search" placeholder="Название вакансии"><span id="error" class="error"></span>
+            </label>
+
+            <label>Что искать:
+                <select name="ask_type_work" required>
+                    <option selected></option>
+                    <option value="search_work">Ищу работу</option>
+                    <option value="work">Предлагаем работу</option>
+                </select>
+            </label>
+
+            <label>Смена работы:
+                <select name="smena_work" required>
+                    <option selected></option>
+                    <option value="no_day">Неполная</option>
+                    <option value="morning">Дневная</option>
+                    <option value="day">Суточная</option>
+                    <option value="yesterday">Ночная</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset class="work">Время работы:
+            <label>
+                <input type="text" name="then_work" placeholder="09:00" pattern="[0-9]{2}:{1}[0-9]{2}" required>
+                <input type="text" name="end_work" placeholder="18:00" pattern="[0-9]{2}:{1}[0-9]{2}" required>
+            </label>
+        </fieldset>
+
+        <fieldset class="work">Зарплата:
+            <label>
+                <input type="number" name="money" pattern="[0-9]" placeholder="5 000" required> р.
+            </label>
+        </fieldset>
+		
+
+
+        <label>
+            <input class="btn btn-default" type="submit" value="Отправить">
+            <input class="btn btn-default" style="background: silver" type="reset" value="Сбросить">
+        </label>
+
+    </form>
+
+    <span id="res"></span>
+</div>
+
+
+</body>
+</html>

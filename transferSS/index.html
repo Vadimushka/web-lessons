@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Страница предназначена для демострации JavaScript's" />
+    <meta name="keywords" content="Урок, лекция, пример, javascript" />
+    <title>Перевод из одной системы счисления в другую</title>
+    <script type="text/javascript" src="js/transfer.js"></script><
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<header class="primary-header container group">
+    <h1 class="logo">
+        <a href="index.html">Labs <br> Dunkin</a>
+    </h1>
+
+    <h3 class="tagline">Перевод из одной системы счисления в другую</h3>
+
+    <nav class="nav primary-nav">
+        <ul>
+            <li><a>ЛР № 1</a></li>
+            <li><a>ЛР № 2</a></li>
+            <li><a>ЛР № 3</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="row">
+    <div class="grid">
+        <section class="col-2-3">
+            <h2>Инструкция</h2>
+
+            <p>Введите число и проставте числовые названия систем счисления в необходимые поля.</p>
+
+            <h4>Возможности</h4>
+
+            <ul class="why-attend">
+                <li>Перевод из 10-ой системы счисления в 2-ую, 8-ую, 16-ую.</li>
+                <li>Перевод из 2-ой (8-ой, 16-ой) системы счисления в 10-ую.</li>
+            </ul>
+
+            <p style="color: red" id="result"></p>
+        </section><!--
+
+      --><form name="Transfer" class="col-1-3" action="javascript:" method="post" onsubmit="">
+            <fieldset class="register-group">
+                <label>
+                    Исходного число ([0-9A-Fa-f]):
+                    <input type="text" name="number" id="number" placeholder="Число" pattern="[0-9A-Fa-f]" required>
+                </label>
+
+                <label>
+                    С/с исходного числа ([0-9]):
+                    <input type="number" name="input" id="input" placeholder="10" pattern="[0-9]" required>
+                </label>
+
+                <label>
+                    С/с переведенного числа ([0-9]):
+                    <input type="number" name="output" id="output" placeholder="2" pattern="[0-9]" required>
+                </label>
+            </fieldset>
+
+            <input class="btn btn-default" style="text-transform: none" type="submit" name="submit" value="Рассчитать" onclick="transfer();" />
+			<input class="btn btn-alt" style="text-transform: none;" type="reset" name="reset" value="Сбросить">
+
+        </form>
+    </div>
+</section>
+
+<footer class="primary-footer container group">
+    <small>&copy; 2016 vadimushka_d</small>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html">Labs</a></li>
+        </ul>
+    </nav>
+</footer>
+
+</body>
+</html>

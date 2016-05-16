@@ -1,0 +1,37 @@
+.work {
+    margin: 5px 0 5px 0;
+}
+
+.work label {
+    display: block;
+}
+
+.work input, select {
+    margin: 5px 0 5px 0;
+    padding: 5px 8px;
+}
+
+.btn {
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.btn-default {
+    border: 0;
+    background: #648880;
+    padding: 11px 30px;
+    font-size: 14px;
+}
+.btn-default:hover {
+    background: #77a198;
+}
+
+.error{
+    color: red;
+}

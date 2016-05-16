@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+    <script type="text/javascript" src="js/cals.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+<body>
+
+<div class="form">
+    <form>
+        <input type="text" id="one_number" pattern="[0-9,]" placeholder="Первое число">
+        <br />
+        <input type="text" id="two_number" pattern="[0-9,]" placeholder="Второе число">
+        <br />
+
+
+
+        <input type="button" name="summ" value="+" />
+        <input type="button" name="subtraction" value="-" />
+        <input type="button" name="multiplication" value="/" />
+        <input type="button" name="division" value="*" />
+
+
+
+        <label><select>
+            <option value="summ" name="operator">+</option>
+            <option value="subtraction" name="operator">-</option>
+            <option value="multiplication" name="operator">*</option>
+            <option value="division" name="operator">/</option>
+        </select></label>
+
+        <span id="result"></span>
+    </form>
+</div>
+
+</body>
+</html>

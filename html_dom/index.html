@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>new page</title>
+</head>
+<body>
+
+<div>Начало</div>
+
+<ul>
+    <li>Информация</li>
+</ul>
+
+<div>Конец</div>
+<div id="out1"></div>
+<div id="out2"></div>
+
+<script>
+    var results1 = document.getElementById('out1');
+    var results2 = document.getElementById('out2');
+
+    results1.innerText = "Все дочерние узлы:\n";
+    for (var i = 0; i < document.body.childNodes.length;i++){
+        results1.innerHTML += document.body.childNodes[i] + " - " +
+                document.body.childNodes[i].nodeType + " - " +
+                document.body.childNodes[i].data + "<br>";
+    }
+
+    results1.innerHTML += document.body.childNodes[1].childNodes[0].data;
+
+    results1.innerHTML += "<br>" + "Все дочерние узлы-элементы:" +"<br>";
+    for(var j = 0;j < document.body.children.length;j++){
+        results1.innerHTML += document.body.children[j] + " - " +
+                document.body.children[j].tagName + "<br>";
+    }
+
+    results2.textContent = "<b>Теги вставляются как текст</b>";
+    console.dir(document);
+</script>
+
+</body>
+</html>

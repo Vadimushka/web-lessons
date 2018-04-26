@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<title>Таймер год-месяц-день-час-минута-секунда</title>
+<style> 
+#mt {width: 600px; text-align: center; margin: 123px auto}
+#mt div {
+	width: 98px;
+	height: 98px;
+	float: left;
+	text-align: center;
+	font-family: verdana,serif;
+	font-size: 48px;
+	font-weight: bold;
+	cursor: default}
+#mt span, #mt div p {font-size: 18px; font-weight: normal}
+</style>
+ 
+<script> 
+var TMR = 10, 
+	myDate = '06.07.1997 09:07:00';
+ 
+onload = function (){
+	setInterval (function (){
+		var a =  myDate.split(' '),
+			b =  a [0].split('.'),
+			c =  a [1].split(':'),
+			d = new Date(),
+			T     =              [] , C     =               [];
+			
+			T [0] =           b [2] , C [0] = d.getFullYear (),  
+			T [1] =         --b [1] , C [1] = d.getMonth    (),      
+			T [2] = parseInt (b [0]), C [2] = d.getDate     (),       
+			T [3] = parseInt (c [0]), C [3] = d.getHours    (),      
+			T [4] = parseInt (c [1]), C [4] = d.getMinutes  (),      
+			T [5] = parseInt (c [2]), C [5] = d.getSeconds  ();    
+   
+		for (var D = [], j = -1; j < 6; j++, D [j] = C [j] - T [j]);
+ 
+		if (D[5] < 0) --D[4],                D[5] += 60;
+		if (D[4] < 0) --D[3],                D[4] += 60;                                                   
+		if (D[3] < 0) --D[2],                D[3] += 24;                                                   
+		if (D[2] < 0) --D[1], d.setDate (0), D[2] +=  d.getDate ();                       
+		if (D[1] < 0) --D[0],                D[1] += 12;
+ 
+		var w = [['год'    , 'года'   , 'лет'    ],   // 0
+				['месяц'  , 'месяца' , 'месяцев'],   // 1
+				['день'   , 'дня'    , 'дней'   ],   // 2
+				['час'    , 'часа'   , 'часов'  ],   // 3
+				['минута' , 'минуты' , 'минут'  ],   // 4
+				['секунда', 'секунды', 'секунд' ]];  // 5
+			
+		for (j = 0; j < 6; j++) {
+			var n = D [j],
+				k = n % 10,
+				l = (!k || n > 5 && n < 21 || k > 4) ? 2 : ((k == 1) ? 0 : 1);
+			
+			document.getElementById('mt').getElementsByTagName('div')[j].innerHTML = n + '<p>' + w[j][l]; 
+		}
+		TMR = 1000;
+	}, TMR);
+}
+</script>
+</head>
+<body>
+<div id="mt">
+<span>с момента старта Гагарина в космос прошло</span><br clear="all">
+<div><p></p></div>
+<div><p></p></div>
+<div><p></p></div>
+<div><p></p></div>
+<div><p></p></div>
+<div><p></p></div>
+</div>
+
+</body></html>

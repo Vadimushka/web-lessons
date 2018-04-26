@@ -1,9 +1,42 @@
-var dd = prompt("Введите день [dd]");
-var mm = prompt("Введите месяц [mm]");
-var yy = prompt("Введите год [yyyy]");
+var formatDate = /(0[1-9]|[12][0-9]|3[01])/;
+var formatMonth = /(0[1-9]|1[012])/;
+var formatYear = /(19|20)\d\d/;
+
+var dateNow = new Date();
+
+var dd = prompt("Введите день [dd]", "");
+while(formatDate.test(dd)){
+    alert("Введенное число не входит в диапазон дат");
+    dd = prompt("Введите день [dd]", "");
+}
+
+//if (dd == ""){
+//    dd = dateNow.getDate();
+//}
+
+var mm = prompt("Введите месяц [mm]", "");
+while(formatMonth.test(mm)){
+    alert("Введенное число не входит в диапазон месяцев");
+    mm = prompt("Введите месяц [mm]", "");
+}
+//if (mm == ""){
+//    mm = dateNow.getMonth();
+//    mm++;
+//}
+
+var yy = prompt("Введите год [yyyy]", "");
+while(formatYear.test(yy)){
+    alert("Введенное число не входит в диапазон годов");
+    yy = prompt("Введите месяц [mm]", "");
+}
+//if (yy == ""){
+//    yy = dateNow.getFullYear();
+//}
+
+var hhmmss = dateNow.toLocaleTimeString();
 
 var TMR = 10,
-    myDate = dd + '.' + mm + '.' + yy + ' 15:17:00';
+    myDate = dd + '.' + mm + '.' + yy + ' ' + hhmmss;
 
 onload = function (){
     setInterval (function () {
@@ -55,9 +88,9 @@ onload = function (){
             ['секунда', 'секунды', 'секунд' ]];  // 5
 
         if(Date.parse(myDate) > d){
-            document.getElementById("text").innerHTML = "Наступит через ";
+            document.getElementById("text").innerHTML = "Дата " + myDate +". Наступит через ";
         } else{
-            document.getElementById("text").innerHTML = "Этот день уже был! Прошло ";
+            document.getElementById("text").innerHTML = "Дата " + myDate +". Этот день уже был! Прошло ";
         }
 
         for (j = 0; j < 6; j++) {
